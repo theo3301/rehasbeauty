@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Reha Beauty Clinic</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* GLOBAL */
+
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:#fff7f9;
+color:#333;
+text-align:center;
+}
+
+h2{
+font-family:'Playfair Display',serif;
+font-size:40px;
+}
+
+/* HEADER */
+
+header{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:12px;
+padding:20px;
+background:white;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
+
+.logo{
+width:50px;
+}
+
+/* NAV */
+
+nav{
+background:white;
+padding:10px;
+position:sticky;
+top:0;
+box-shadow:0 3px 10px rgba(0,0,0,0.05);
+}
+
+nav a{
+margin:10px 15px;
+text-decoration:none;
+color:#444;
+font-weight:500;
+transition:.3s;
+}
+
+nav a:hover{
+color:#d6336c;
+}
+
+/* HERO */
+
+.aboutHero{
+background:#f7d9dc;
+padding:80px 20px;
+}
+
+.aboutHero h1{
+font-family:'Playfair Display',serif;
+font-size:48px;
+color:#d6336c;
+}
+
+/* ABOUT */
+
+.aboutSection{
+max-width:900px;
+margin:auto;
+padding:60px 20px;
+line-height:1.7;
+}
+
+/* TIMELINE */
+
+.timeline{
+max-width:900px;
+margin:60px auto;
+position:relative;
+}
+
+.timeline::after{
+content:'';
+position:absolute;
+width:4px;
+background:#d6336c;
+top:0;
+bottom:0;
+left:50%;
+margin-left:-2px;
+}
+
+.timeline-item{
+padding:20px 40px;
+position:relative;
+width:50%;
+}
+
+.timeline-item::after{
+content:'';
+position:absolute;
+width:20px;
+height:20px;
+right:-10px;
+background:#d6336c;
+border-radius:50%;
+top:20px;
+}
+
+.timeline-left{
+left:0;
+text-align:right;
+}
+
+.timeline-right{
+left:50%;
+}
+
+.timeline-right::after{
+left:-10px;
+}
+
+.timeline-content{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* CERTIFICATIONS */
+
+.certified{
+display:flex;
+gap:30px;
+justify-content:center;
+flex-wrap:wrap;
+margin-top:40px;
+}
+
+.certCard{
+background:white;
+padding:25px;
+border-radius:12px;
+width:260px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* TEAM */
+
+.teamSection{
+padding:80px 20px;
+background:#fff7f9;
+}
+
+.teamContainer{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:40px;
+max-width:1000px;
+margin:auto;
+}
+
+.teamCard{
+width:200px;
+}
+
+.teamCard img{
+width:100%;
+border-radius:12px;
+}
+
+.teamCard h3{
+margin-top:10px;
+}
+
+/* FOOTER */
+
+footer{
+background:#f7d9dc;
+padding:40px;
+margin-top:40px;
+}
+
+.footer-social a{
+margin:0 10px;
+text-decoration:none;
+color:#d6336c;
+font-weight:600;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px;
+font-size:22px;
+border-radius:50%;
+text-decoration:none;
+}
+
+@media(max-width:768px){
+
+.timeline::after{
+left:20px;
+}
+
+.timeline-item{
+width:100%;
+padding-left:60px;
+text-align:left;
+}
+
+.timeline-item::after{
+left:10px;
+}
+
+.timeline-right{
+left:0;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" class="logo">
+<h1>Reha Beauty Clinic</h1>
+</header>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="aboutus.html">About Us</a>
+<a href="index.html#services">Services</a>
+<a href="index.html#portfolio">Gallery</a>
+<a href="index.html#reviews">Reviews</a>
+<a href="index.html#contact">Contact</a>
+</nav>
+
+<section class="aboutHero">
+<h1>About Reha Beauty Clinic</h1>
+</section>
+
+<section class="aboutSection">
+
+<p>
+Reha Beauty Clinic was created from a deep passion for beauty, skincare, and confidence. Founded in Srinagar, the clinic represents the dream of Reha — a professional beauty expert who believes beauty is both an art and a science.
+</p>
+
+<br>
+
+<p>
+Inspired by the natural beauty of Kashmir, Reha developed a strong dedication to skincare, makeup artistry, and professional beauty treatments. Her commitment to excellence and continuous learning helped her transform this passion into a trusted beauty brand.
+</p>
+
+</section>
+
+<section>
+
+<h2>Our Story</h2>
+
+<div class="timeline">
+
+<div class="timeline-item timeline-left">
+<div class="timeline-content">
+<h3>2018</h3>
+<p>The journey of Reha Beauty began with a passion for skincare and makeup artistry.</p>
+</div>
+</div>
+
+<div class="timeline-item timeline-right">
+<div class="timeline-content">
+<h3>2020</h3>
+<p>Professional training completed with top beauty academies in India.</p>
+</div>
+</div>
+
+<div class="timeline-item timeline-left">
+<div class="timeline-content">
+<h3>2022</h3>
+<p>Reha Beauty Clinic opened in Srinagar, offering luxury beauty services.</p>
+</div>
+</div>
+
+<div class="timeline-item timeline-right">
+<div class="timeline-content">
+<h3>2024</h3>
+<p>Trusted by hundreds of bridal clients and beauty enthusiasts.</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="aboutSection">
+
+<h2>Certifications & Expertise</h2>
+
+<div class="certified">
+
+<div class="certCard">
+<strong>Professional Skin Care Certification</strong>
+<p>Certified by Harshada Takke Skin Care Certification Board.</p>
+</div>
+
+<div class="certCard">
+<strong>Nail Art Specialist</strong>
+<p>Expertise in professional nail art design and beauty styling.</p>
+</div>
+
+<div class="certCard">
+<strong>Hair Styling Training</strong>
+<p>Trained by Bollywood hairstylist Kamal Palan.</p>
+</div>
+
+<div class="certCard">
+<strong>Professional Makeup Artist</strong>
+<p>Certified by Jaywant Thakre Makeup Academy.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="teamSection">
+
+<h2>Our Team</h2>
+
+<div class="teamContainer">
+
+<div class="teamCard">
+<img src="Assets/5.jpg">
+<h3>Dr Disha Jaggi</h3>
+</div>
+
+<div class="teamCard">
+<img src="Assets/1 (1).jpg">
+<h3>Uday Takke</h3>
+</div>
+
+<div class="teamCard">
+<img src="Assets/2.jpg">
+<h3>Jaywant Thakre</h3>
+</div>
+
+<div class="teamCard">
+<img src="Assets/3.jpg">
+<h3>Kamal Palan</h3>
+</div>
+
+<div class="teamCard">
+<img src="Assets/4.jpg">
+<h3>Mrs Harshada Takke</h3>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<h3>Reha Beauty Clinic</h3>
+
+<p>Luxury Bridal Makeup & Beauty Studio</p>
+
+<div class="footer-social">
+<a href="#">Instagram</a>
+<a href="#">Facebook</a>
+<a href="https://wa.me/917051610035">WhatsApp</a>
+</div>
+
+<p>© 2026 Reha Beauty Clinic. All Rights Reserved.</p>
+
+</footer>
+
+<a href="https://wa.me/917051610035" class="whatsapp">💬</a>
+
+</body>
+</html>
