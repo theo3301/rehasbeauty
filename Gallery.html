@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gallery | Reha Beauty Clinic</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:#fff7f9;
+text-align:center;
+user-select:none;
+}
+
+/* HERO */
+
+.hero{
+height:50vh;
+background:url("https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9") center/cover;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-size:42px;
+font-family:'Playfair Display';
+}
+
+/* FILTER */
+
+.filters{
+padding:40px;
+}
+
+.filters button{
+border:none;
+padding:12px 25px;
+margin:8px;
+border-radius:30px;
+background:white;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+cursor:pointer;
+}
+
+.filters button.active{
+background:#d6336c;
+color:white;
+}
+
+/* GALLERY */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+padding:40px;
+max-width:1200px;
+margin:auto;
+}
+
+.card{
+position:relative;
+overflow:hidden;
+border-radius:15px;
+transition:.4s;
+}
+
+.card:hover{
+transform:scale(1.05);
+}
+
+.card img{
+width:100%;
+display:block;
+border-radius:15px;
+}
+
+.overlay{
+position:absolute;
+bottom:0;
+width:100%;
+background:rgba(0,0,0,.6);
+color:white;
+padding:10px;
+}
+
+/* BEFORE AFTER */
+
+.before-after{
+padding:80px 20px;
+}
+
+.compare{
+position:relative;
+width:600px;
+max-width:90%;
+margin:auto;
+overflow:hidden;
+}
+
+.compare img{
+width:100%;
+display:block;
+pointer-events:none;
+}
+
+.after{
+position:absolute;
+top:0;
+left:0;
+width:50%;
+height:100%;
+overflow:hidden;
+}
+
+.after img{
+width:100%;
+}
+
+/* SLIDER LINE */
+
+.slider{
+position:absolute;
+top:0;
+left:50%;
+width:3px;
+height:100%;
+background:white;
+cursor:ew-resize;
+z-index:10;
+}
+
+/* HANDLE */
+
+.slider::after{
+content:"↔";
+position:absolute;
+top:50%;
+left:-18px;
+width:36px;
+height:36px;
+background:#d6336c;
+color:white;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:18px;
+transform:translateY(-50%);
+box-shadow:0 0 10px rgba(0,0,0,0.4);
+}
+
+/* PARALLAX */
+
+.parallax{
+height:400px;
+background:url("https://images.unsplash.com/photo-1512496015851-a90fb38ba796") center/cover fixed;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-size:38px;
+font-family:'Playfair Display';
+}
+
+/* LIGHTBOX */
+
+.lightbox{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.9);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:999;
+}
+
+.lightbox img{
+max-width:90%;
+max-height:90%;
+}
+
+.close{
+position:absolute;
+top:30px;
+right:40px;
+font-size:35px;
+color:white;
+cursor:pointer;
+}
+
+/* INFINITE */
+
+#infinite{
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+gap:15px;
+padding:40px;
+}
+
+#infinite img{
+width:100%;
+border-radius:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="hero">
+Our Beauty Gallery
+</div>
+
+<div class="filters">
+
+<button class="active" onclick="filterGallery('all',this)">All</button> <button onclick="filterGallery('makeup',this)">Makeup</button> <button onclick="filterGallery('skin',this)">Skin Care</button> <button onclick="filterGallery('bridal',this)">Bridal</button>
+
+</div>
+
+<div class="gallery">
+
+<div class="card makeup">
+<img loading="lazy" src="https://picsum.photos/400/500?1">
+<div class="overlay">Makeup</div>
+</div>
+
+<div class="card skin">
+<img loading="lazy" src="https://picsum.photos/400/500?2">
+<div class="overlay">Skin Care</div>
+</div>
+
+<div class="card bridal">
+<img loading="lazy" src="https://picsum.photos/400/500?3">
+<div class="overlay">Bridal</div>
+</div>
+
+</div>
+
+<section class="before-after">
+
+<h2>Before & After Transformation</h2>
+
+<div class="compare" id="compare">
+
+<img src="https://picsum.photos/600/400?7">
+
+<div class="after" id="after">
+<img src="https://picsum.photos/600/400?8">
+</div>
+
+<div class="slider" id="slider"></div>
+
+</div>
+
+</section>
+
+<div class="parallax">
+Luxury Beauty Experience
+</div>
+
+<section>
+
+<h2>More Work</h2>
+
+<div id="infinite"></div>
+
+</section>
+
+<div class="lightbox" id="lightbox">
+<span class="close" onclick="closeLightbox()">×</span>
+<img id="lightImg">
+</div>
+
+<script>
+
+/* FILTER */
+
+function filterGallery(cat,btn){
+
+let cards=document.querySelectorAll(".card");
+let buttons=document.querySelectorAll(".filters button");
+
+buttons.forEach(b=>b.classList.remove("active"));
+btn.classList.add("active");
+
+cards.forEach(card=>{
+if(cat==="all"||card.classList.contains(cat)){
+card.style.display="block";
+}else{
+card.style.display="none";
+}
+});
+
+}
+
+/* BEFORE AFTER */
+
+const compare=document.getElementById("compare");
+const after=document.getElementById("after");
+const slider=document.getElementById("slider");
+
+let dragging=false;
+
+slider.addEventListener("mousedown",()=>dragging=true);
+window.addEventListener("mouseup",()=>dragging=false);
+
+window.addEventListener("mousemove",(e)=>{
+
+if(!dragging) return;
+
+let rect=compare.getBoundingClientRect();
+
+let x=e.clientX-rect.left;
+
+x=Math.max(0,Math.min(rect.width,x));
+
+let percent=x/rect.width*100;
+
+after.style.width=percent+"%";
+slider.style.left=percent+"%";
+
+});
+
+/* AUTO DEMO ONCE */
+
+let demo=[50,65,80,95,80,65,50];
+let step=0;
+
+let auto=setInterval(()=>{
+
+if(step>=demo.length){
+
+clearInterval(auto);
+return;
+
+}
+
+after.style.width=demo[step]+"%";
+slider.style.left=demo[step]+"%";
+
+step++;
+
+},120);
+
+
+/* LIGHTBOX */
+
+document.querySelectorAll(".card img").forEach(img=>{
+img.onclick=()=>{
+document.getElementById("lightbox").style.display="flex";
+document.getElementById("lightImg").src=img.src;
+};
+});
+
+function closeLightbox(){
+document.getElementById("lightbox").style.display="none";
+}
+
+/* INFINITE */
+
+let infinite=document.getElementById("infinite");
+
+function loadImages(){
+
+for(let i=0;i<6;i++){
+
+let img=document.createElement("img");
+
+img.src=`https://picsum.photos/300/300?random=${Math.random()}`;
+
+img.loading="lazy";
+
+infinite.appendChild(img);
+
+}
+
+}
+
+window.addEventListener("scroll",()=>{
+
+if(window.innerHeight+window.scrollY>=document.body.offsetHeight-200){
+
+loadImages();
+
+}
+
+});
+
+loadImages();
+
+</script>
+
+</body>
+</html>
