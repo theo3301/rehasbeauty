@@ -43,7 +43,7 @@ color:#d6336c;
 
 .hero{
 height:55vh;
-background:url("https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9");
+background:url("https://picsum.photos/1600/900?beauty");
 background-size:cover;
 background-position:center;
 display:flex;
@@ -67,26 +67,25 @@ font-size:50px;
 font-family:'Playfair Display';
 }
 
-/* TABS */
+/* FILTER BUTTONS */
 
-.tabs{
+.filters{
 text-align:center;
 margin:60px 0 30px;
 }
 
-.tabs button{
-padding:12px 20px;
+.filters button{
+padding:10px 18px;
 margin:6px;
 border:none;
-background:white;
 border-radius:30px;
 cursor:pointer;
-font-weight:600;
+background:white;
 box-shadow:0 5px 15px rgba(0,0,0,0.1);
-transition:0.3s;
+font-weight:600;
 }
 
-.tabs button:hover{
+.filters button:hover{
 background:#d6336c;
 color:white;
 }
@@ -99,23 +98,22 @@ grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:35px;
 max-width:1100px;
 margin:auto;
-padding:40px 20px 80px;
+padding:20px;
 }
 
-/* CARD */
+/* SERVICE CARD */
 
 .card{
-position:relative;
 border-radius:18px;
 overflow:hidden;
+background:white;
 box-shadow:0 15px 35px rgba(0,0,0,0.15);
 transition:0.4s;
-background:white;
 }
 
 .card img{
 width:100%;
-height:250px;
+height:240px;
 object-fit:cover;
 transition:0.6s;
 }
@@ -126,10 +124,7 @@ transform:scale(1.1);
 
 .card:hover{
 transform:translateY(-12px);
-box-shadow:0 25px 60px rgba(0,0,0,0.25);
 }
-
-/* CARD CONTENT */
 
 .card-content{
 padding:18px;
@@ -137,14 +132,7 @@ padding:18px;
 
 .card h3{
 color:#d6336c;
-margin-bottom:10px;
 font-family:'Playfair Display';
-}
-
-.card ul{
-padding-left:16px;
-text-align:left;
-line-height:1.8;
 }
 
 /* BOOK BUTTON */
@@ -153,20 +141,72 @@ line-height:1.8;
 display:inline-block;
 margin-top:10px;
 padding:10px 18px;
-background:#d6336c;
+background:linear-gradient(45deg,#d6336c,#ff8fab);
 color:white;
 border-radius:30px;
 text-decoration:none;
-font-size:14px;
+}
+
+/* PRICING SECTION */
+
+.pricing{
+padding:80px 20px;
+background:white;
+text-align:center;
+}
+
+.pricing h2{
+font-family:'Playfair Display';
+font-size:40px;
+margin-bottom:40px;
+}
+
+.pricing-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+max-width:1000px;
+margin:auto;
+}
+
+.price-card{
+background:white;
+border-radius:18px;
+padding:30px;
+box-shadow:0 15px 40px rgba(0,0,0,0.15);
+transition:0.4s;
+}
+
+.price-card:hover{
+transform:translateY(-10px);
+}
+
+.price{
+font-size:36px;
+color:#d6336c;
+font-weight:600;
+margin:10px 0;
+}
+
+/* BEFORE AFTER */
+
+.before-after{
+padding:80px 20px;
+text-align:center;
+}
+
+.before-after img{
+width:280px;
+border-radius:12px;
+margin:10px;
 }
 
 /* FOOTER */
 
 footer{
 background:#f7d9dc;
-text-align:center;
 padding:30px;
-margin-top:50px;
+text-align:center;
 }
 
 /* WHATSAPP */
@@ -177,20 +217,10 @@ bottom:20px;
 right:20px;
 background:#25D366;
 color:white;
-padding:16px;
+padding:15px;
 border-radius:50%;
 font-size:24px;
 text-decoration:none;
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-.hero h1{
-font-size:32px;
-}
-
 }
 
 </style>
@@ -200,158 +230,145 @@ font-size:32px;
 <body>
 
 <nav>
+
 <a href="index.html">Home</a>
 <a href="services.html">Services</a>
 <a href="Gallery.html">Gallery</a>
 <a href="Contact.html">Contact</a>
-</nav>
 
-<!-- HERO -->
+</nav>
 
 <section class="hero">
 
-<h1>Our Services</h1>
+<h1>Luxury Beauty Services</h1>
 
 </section>
+
+<!-- FILTER -->
+
+<div class="filters">
+
+<button onclick="filterServices('all')">All</button>
+<button onclick="filterServices('makeup')">Makeup</button>
+<button onclick="filterServices('skin')">Skin</button>
+<button onclick="filterServices('hair')">Hair</button>
+<button onclick="filterServices('bridal')">Bridal</button>
+
+</div>
 
 <!-- SERVICES -->
 
 <section class="services">
 
-<!-- MAKEUP -->
-
-<div class="card">
-
-<img src="Assets/makeup.jpg">
-
+<div class="card makeup">
+<img src="https://picsum.photos/400/300?makeup">
 <div class="card-content">
-
-<h3>Makeup</h3>
-
-<ul>
-<li>Party Makeup</li>
-<li>Bridal Makeup</li>
-<li>Bridal Hairdo</li>
-</ul>
-
-<a href="https://wa.me/917051610035" class="book-btn">Book Appointment</a>
-
+<h3>Party Makeup</h3>
+<p>Professional party makeup for events.</p>
+<a href="https://wa.me/917051610035" class="book-btn">Book Now</a>
+</div>
 </div>
 
-</div>
-
-<!-- HAIR -->
-
-<div class="card">
-
-<img src="Assets/Hairstyle.jpg">
-
+<div class="card makeup">
+<img src="https://picsum.photos/400/300?bridal">
 <div class="card-content">
-
-<h3>Hair</h3>
-
-<ul>
-<li>Hair Treatments</li>
-<li>Hair Colouring</li>
-<li>Hair Styling</li>
-<li>Hair Cuts</li>
-</ul>
-
-<a href="https://wa.me/917051610035" class="book-btn">Book Appointment</a>
-
+<h3>Bridal Makeup</h3>
+<p>Luxury bridal makeover services.</p>
+<a href="#" class="book-btn">Book Now</a>
+</div>
 </div>
 
-</div>
-
-<!-- FACIAL -->
-
-<div class="card">
-
-<img src="Assets/Facials.jpg">
-
+<div class="card hair">
+<img src="https://picsum.photos/400/300?hair">
 <div class="card-content">
+<h3>Hair Styling</h3>
+<p>Modern hair styling and colouring.</p>
+<a href="#" class="book-btn">Book Now</a>
+</div>
+</div>
 
+<div class="card skin">
+<img src="https://picsum.photos/400/300?facial">
+<div class="card-content">
 <h3>Facials</h3>
-
-<ul>
-<li>Vampire Facial</li>
-<li>Hydra Facial</li>
-<li>Oxyjet Facial</li>
-<li>LED Facial</li>
-</ul>
-
-<a href="https://wa.me/917051610035" class="book-btn">Book Appointment</a>
-
+<p>Hydra facial, LED facial & more.</p>
+<a href="#" class="book-btn">Book Now</a>
+</div>
 </div>
 
-</div>
-
-<!-- TREATMENTS -->
-
-<div class="card">
-
-<img src="Assets/Treatments.jpg">
-
+<div class="card skin">
+<img src="https://picsum.photos/400/300?skin">
 <div class="card-content">
-
 <h3>Skin Treatments</h3>
+<p>Laser, chemical peel and more.</p>
+<a href="#" class="book-btn">Book Now</a>
+</div>
+</div>
 
-<ul>
-<li>Chemical Peel</li>
-<li>Carbon Laser</li>
-<li>Laser Hair Removal</li>
-</ul>
+</section>
 
-<a href="https://wa.me/917051610035" class="book-btn">Book Appointment</a>
+<!-- BRIDAL PACKAGES -->
+
+<section class="pricing">
+
+<h2>Bridal Packages</h2>
+
+<div class="pricing-grid">
+
+<div class="price-card">
+
+<h3>Silver Bridal</h3>
+
+<div class="price">₹15,000</div>
+
+<p>Bridal Makeup</p>
+<p>Hair Styling</p>
+<p>Basic Skin Prep</p>
+
+<a href="#" class="book-btn">Book Package</a>
+
+</div>
+
+<div class="price-card">
+
+<h3>Gold Bridal</h3>
+
+<div class="price">₹25,000</div>
+
+<p>Luxury Bridal Makeup</p>
+<p>Hair Styling</p>
+<p>HD Makeup</p>
+
+<a href="#" class="book-btn">Book Package</a>
+
+</div>
+
+<div class="price-card">
+
+<h3>Platinum Bridal</h3>
+
+<div class="price">₹40,000</div>
+
+<p>Premium Bridal Look</p>
+<p>Hair Styling</p>
+<p>Skin Treatment</p>
+
+<a href="#" class="book-btn">Book Package</a>
 
 </div>
 
 </div>
 
-<!-- AESTHETIC -->
+</section>
 
-<div class="card">
+<!-- BEFORE AFTER -->
 
-<img src="Assets/Aesthetic.jpg">
+<section class="before-after">
 
-<div class="card-content">
+<h2>Before & After</h2>
 
-<h3>Aesthetic</h3>
-
-<ul>
-<li>Botox</li>
-<li>Fillers</li>
-</ul>
-
-<a href="https://wa.me/917051610035" class="book-btn">Book Appointment</a>
-
-</div>
-
-</div>
-
-<!-- GROOMING -->
-
-<div class="card">
-
-<img src="Assets/Grooming.jpg">
-
-<div class="card-content">
-
-<h3>Grooming</h3>
-
-<ul>
-<li>Eyebrow Tinting</li>
-<li>Body Polishing</li>
-<li>Nail Art</li>
-<li>Manicure</li>
-<li>Pedicure</li>
-</ul>
-
-<a href="https://wa.me/917051610035" class="book-btn">Book Appointment</a>
-
-</div>
-
-</div>
+<img src="https://picsum.photos/300/400?face1">
+<img src="https://picsum.photos/300/400?face2">
 
 </section>
 
@@ -366,6 +383,32 @@ font-size:32px;
 </footer>
 
 <a href="https://wa.me/917051610035" class="whatsapp">💬</a>
+
+<script>
+
+function filterServices(category){
+
+let cards=document.querySelectorAll(".card");
+
+cards.forEach(card=>{
+
+if(category==="all"){
+card.style.display="block";
+}
+
+else if(card.classList.contains(category)){
+card.style.display="block";
+}
+
+else{
+card.style.display="none";
+}
+
+});
+
+}
+
+</script>
 
 </body>
 </html>
