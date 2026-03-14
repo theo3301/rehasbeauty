@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
@@ -8,7 +7,9 @@
 
 <title>Services | Reha Beauty Clinic</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 <style>
 
@@ -19,20 +20,24 @@ background:#fff7f9;
 color:#333;
 }
 
-/* NAV */
+/* NAVBAR */
 
 nav{
 background:white;
-padding:12px;
+padding:15px;
 text-align:center;
-box-shadow:0 3px 10px rgba(0,0,0,0.05);
+box-shadow:0 3px 12px rgba(0,0,0,0.08);
+position:sticky;
+top:0;
+z-index:999;
 }
 
 nav a{
-margin:0 15px;
+margin:0 18px;
 text-decoration:none;
-color:#444;
+color:#333;
 font-weight:500;
+position:relative;
 }
 
 nav a:hover{
@@ -42,8 +47,8 @@ color:#d6336c;
 /* HERO */
 
 .hero{
-height:55vh;
-background:url("https://picsum.photos/1600/900?beauty");
+height:60vh;
+background:url("https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9");
 background-size:cover;
 background-position:center;
 display:flex;
@@ -57,32 +62,33 @@ content:"";
 position:absolute;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.45);
+background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.5));
 }
 
 .hero h1{
 position:relative;
 color:white;
-font-size:50px;
 font-family:'Playfair Display';
+font-size:55px;
 }
 
-/* FILTER BUTTONS */
+/* FILTER */
 
 .filters{
 text-align:center;
-margin:60px 0 30px;
+margin:60px 0 40px;
 }
 
 .filters button{
-padding:10px 18px;
-margin:6px;
+padding:12px 20px;
 border:none;
 border-radius:30px;
-cursor:pointer;
+margin:6px;
 background:white;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
+box-shadow:0 5px 18px rgba(0,0,0,0.12);
+cursor:pointer;
 font-weight:600;
+transition:0.3s;
 }
 
 .filters button:hover{
@@ -94,9 +100,9 @@ color:white;
 
 .services{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:35px;
-max-width:1100px;
+max-width:1200px;
 margin:auto;
 padding:20px;
 }
@@ -106,14 +112,19 @@ padding:20px;
 .card{
 border-radius:18px;
 overflow:hidden;
-background:white;
-box-shadow:0 15px 35px rgba(0,0,0,0.15);
+background:rgba(255,255,255,0.8);
+backdrop-filter:blur(8px);
+box-shadow:0 20px 40px rgba(0,0,0,0.15);
 transition:0.4s;
+}
+
+.card:hover{
+transform:translateY(-12px);
 }
 
 .card img{
 width:100%;
-height:240px;
+height:250px;
 object-fit:cover;
 transition:0.6s;
 }
@@ -122,58 +133,56 @@ transition:0.6s;
 transform:scale(1.1);
 }
 
-.card:hover{
-transform:translateY(-12px);
-}
-
 .card-content{
-padding:18px;
+padding:20px;
 }
 
 .card h3{
 color:#d6336c;
 font-family:'Playfair Display';
+margin-bottom:10px;
 }
 
-/* BOOK BUTTON */
+/* BUTTON */
 
 .book-btn{
 display:inline-block;
 margin-top:10px;
-padding:10px 18px;
+padding:10px 20px;
+border-radius:30px;
 background:linear-gradient(45deg,#d6336c,#ff8fab);
 color:white;
-border-radius:30px;
 text-decoration:none;
+font-size:14px;
 }
 
-/* PRICING SECTION */
+/* BRIDAL PACKAGES */
 
 .pricing{
-padding:80px 20px;
+padding:90px 20px;
 background:white;
 text-align:center;
 }
 
 .pricing h2{
 font-family:'Playfair Display';
-font-size:40px;
+font-size:42px;
 margin-bottom:40px;
 }
 
 .pricing-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:30px;
-max-width:1000px;
+max-width:1100px;
 margin:auto;
 }
 
 .price-card{
 background:white;
-border-radius:18px;
-padding:30px;
-box-shadow:0 15px 40px rgba(0,0,0,0.15);
+border-radius:20px;
+padding:35px;
+box-shadow:0 20px 45px rgba(0,0,0,0.18);
 transition:0.4s;
 }
 
@@ -182,42 +191,51 @@ transform:translateY(-10px);
 }
 
 .price{
-font-size:36px;
+font-size:38px;
 color:#d6336c;
-font-weight:600;
-margin:10px 0;
+margin:15px 0;
 }
 
-/* BEFORE AFTER */
+/* CTA */
 
-.before-after{
-padding:80px 20px;
+.cta{
 text-align:center;
+padding:80px 20px;
+background:#f7d9dc;
 }
 
-.before-after img{
-width:280px;
-border-radius:12px;
-margin:10px;
+.cta h2{
+font-family:'Playfair Display';
+font-size:38px;
+}
+
+.cta a{
+display:inline-block;
+margin-top:20px;
+padding:14px 30px;
+border-radius:40px;
+background:#d6336c;
+color:white;
+text-decoration:none;
 }
 
 /* FOOTER */
 
 footer{
 background:#f7d9dc;
-padding:30px;
 text-align:center;
+padding:35px;
 }
 
 /* WHATSAPP */
 
 .whatsapp{
 position:fixed;
-bottom:20px;
-right:20px;
+bottom:25px;
+right:25px;
 background:#25D366;
 color:white;
-padding:15px;
+padding:16px;
 border-radius:50%;
 font-size:24px;
 text-decoration:none;
@@ -240,7 +258,7 @@ text-decoration:none;
 
 <section class="hero">
 
-<h1>Luxury Beauty Services</h1>
+<h1 data-aos="fade-up">Luxury Beauty Services</h1>
 
 </section>
 
@@ -260,48 +278,48 @@ text-decoration:none;
 
 <section class="services">
 
-<div class="card makeup">
-<img src="https://picsum.photos/400/300?makeup">
+<div class="card makeup" data-aos="fade-up">
+<img src="https://images.unsplash.com/photo-1487412912498-0447578fcca8">
 <div class="card-content">
 <h3>Party Makeup</h3>
-<p>Professional party makeup for events.</p>
+<p>Professional event makeup for weddings & parties.</p>
 <a href="https://wa.me/917051610035" class="book-btn">Book Now</a>
 </div>
 </div>
 
-<div class="card makeup">
-<img src="https://picsum.photos/400/300?bridal">
+<div class="card bridal" data-aos="fade-up">
+<img src="https://images.unsplash.com/photo-1601568870191-33a7a05a4d0c">
 <div class="card-content">
 <h3>Bridal Makeup</h3>
-<p>Luxury bridal makeover services.</p>
-<a href="#" class="book-btn">Book Now</a>
+<p>Luxury bridal makeover & HD makeup.</p>
+<a href="https://wa.me/917051610035" class="book-btn">Book Now</a>
 </div>
 </div>
 
-<div class="card hair">
-<img src="https://picsum.photos/400/300?hair">
+<div class="card hair" data-aos="fade-up">
+<img src="https://images.unsplash.com/photo-1522338242992-e1a54906a8da">
 <div class="card-content">
 <h3>Hair Styling</h3>
-<p>Modern hair styling and colouring.</p>
-<a href="#" class="book-btn">Book Now</a>
+<p>Hair coloring, treatments and styling.</p>
+<a href="https://wa.me/917051610035" class="book-btn">Book Now</a>
 </div>
 </div>
 
-<div class="card skin">
-<img src="https://picsum.photos/400/300?facial">
+<div class="card skin" data-aos="fade-up">
+<img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15">
 <div class="card-content">
 <h3>Facials</h3>
-<p>Hydra facial, LED facial & more.</p>
-<a href="#" class="book-btn">Book Now</a>
+<p>Hydra facial, LED facial and rejuvenation treatments.</p>
+<a href="https://wa.me/917051610035" class="book-btn">Book Now</a>
 </div>
 </div>
 
-<div class="card skin">
-<img src="https://picsum.photos/400/300?skin">
+<div class="card skin" data-aos="fade-up">
+<img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908">
 <div class="card-content">
 <h3>Skin Treatments</h3>
-<p>Laser, chemical peel and more.</p>
-<a href="#" class="book-btn">Book Now</a>
+<p>Chemical peel, laser treatments and skincare.</p>
+<a href="https://wa.me/917051610035" class="book-btn">Book Now</a>
 </div>
 </div>
 
@@ -311,11 +329,11 @@ text-decoration:none;
 
 <section class="pricing">
 
-<h2>Bridal Packages</h2>
+<h2 data-aos="fade-up">Bridal Packages</h2>
 
 <div class="pricing-grid">
 
-<div class="price-card">
+<div class="price-card" data-aos="fade-up">
 
 <h3>Silver Bridal</h3>
 
@@ -325,35 +343,35 @@ text-decoration:none;
 <p>Hair Styling</p>
 <p>Basic Skin Prep</p>
 
-<a href="#" class="book-btn">Book Package</a>
+<a href="https://wa.me/917051610035" class="book-btn">Book Package</a>
 
 </div>
 
-<div class="price-card">
+<div class="price-card" data-aos="fade-up">
 
 <h3>Gold Bridal</h3>
 
 <div class="price">₹25,000</div>
 
-<p>Luxury Bridal Makeup</p>
-<p>Hair Styling</p>
-<p>HD Makeup</p>
+<p>HD Bridal Makeup</p>
+<p>Luxury Hair Styling</p>
+<p>Premium Products</p>
 
-<a href="#" class="book-btn">Book Package</a>
+<a href="https://wa.me/917051610035" class="book-btn">Book Package</a>
 
 </div>
 
-<div class="price-card">
+<div class="price-card" data-aos="fade-up">
 
 <h3>Platinum Bridal</h3>
 
 <div class="price">₹40,000</div>
 
-<p>Premium Bridal Look</p>
+<p>Luxury Bridal Look</p>
 <p>Hair Styling</p>
 <p>Skin Treatment</p>
 
-<a href="#" class="book-btn">Book Package</a>
+<a href="https://wa.me/917051610035" class="book-btn">Book Package</a>
 
 </div>
 
@@ -361,14 +379,13 @@ text-decoration:none;
 
 </section>
 
-<!-- BEFORE AFTER -->
+<!-- CTA -->
 
-<section class="before-after">
+<section class="cta">
 
-<h2>Before & After</h2>
+<h2>Book Your Luxury Beauty Experience</h2>
 
-<img src="https://picsum.photos/300/400?face1">
-<img src="https://picsum.photos/300/400?face2">
+<a href="https://wa.me/917051610035">Book Appointment</a>
 
 </section>
 
@@ -384,7 +401,11 @@ text-decoration:none;
 
 <a href="https://wa.me/917051610035" class="whatsapp">💬</a>
 
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
 <script>
+
+AOS.init();
 
 function filterServices(category){
 
