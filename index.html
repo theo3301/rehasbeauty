@@ -53,26 +53,113 @@ box-shadow:0 5px 20px rgba(0,0,0,0.05);
 width:50px;
 }
 
-/* NAV */
 
-nav{
-background:white;
-padding:10px;
+
+/* NAVBAR GLASS */
+
+.navbar{
 position:sticky;
 top:0;
-box-shadow:0 3px 10px rgba(0,0,0,0.05);
+display:flex;
+justify-content:center;
+align-items:center;
+padding:15px 20px;
+
+background:rgba(255,255,255,0.6);
+backdrop-filter:blur(12px);
+-webkit-backdrop-filter:blur(12px);
+
+box-shadow:0 8px 30px rgba(0,0,0,0.08);
+z-index:1000;
 }
 
-nav a{
-margin:10px 15px;
+/* NAV LINKS */
+
+.nav-links{
+display:flex;
+gap:25px;
+}
+
+.nav-links a{
 text-decoration:none;
 color:#444;
 font-weight:500;
-transition:.3s;
+position:relative;
+transition:0.3s;
 }
 
-nav a:hover{
+/* UNDERLINE ANIMATION */
+
+.nav-links a::after{
+content:"";
+position:absolute;
+bottom:-5px;
+left:0;
+width:0%;
+height:2px;
+background:#d6336c;
+transition:0.3s;
+}
+
+.nav-links a:hover::after{
+width:100%;
+}
+
+.nav-links a:hover{
 color:#d6336c;
+}
+
+/* ACTIVE PAGE */
+
+.nav-links a.active{
+color:#d6336c;
+font-weight:600;
+}
+
+/* MOBILE BUTTON */
+
+.menu-toggle{
+display:none;
+font-size:28px;
+cursor:pointer;
+color:#d6336c;
+}
+
+/* MOBILE STYLE */
+
+@media(max-width:768px){
+
+.navbar{
+justify-content:space-between;
+}
+
+.menu-toggle{
+display:block;
+}
+
+.nav-links{
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+
+flex-direction:column;
+background:rgba(255,255,255,0.95);
+
+backdrop-filter:blur(10px);
+
+display:none;
+padding:20px 0;
+}
+
+.nav-links a{
+padding:12px;
+}
+
+.nav-links.show{
+display:flex;
+}
+
 }
 
 /* HERO */
@@ -381,14 +468,22 @@ font-size:34px;
 <h1>Reha Beauty Clinic</h1>
 </header>
 
-<nav>
-<a href="index.html">Home</a>
+  
+<nav class="navbar">
+
+<div class="menu-toggle" id="menuToggle">
+☰
+</div>
+
+<div class="nav-links" id="navLinks">
+<a href="index.html" class="active">Home</a>
 <a href="services.html">Services</a>
 <a href="Gallery.html">Gallery</a>
 <a href="contact.html">Contact</a>
 <a href="AboutUs.html">About Us</a>
-</nav>
+</div>
 
+</nav>
 <!-- HERO -->
 
 <section class="hero">
@@ -651,6 +746,15 @@ reviewTrack.style.transform=`translateX(-${reviewScroll}px)`;
 },3500);
 
 </script>
+<script>
 
+const toggle=document.getElementById("menuToggle");
+const nav=document.getElementById("navLinks");
+
+toggle.onclick=()=>{
+nav.classList.toggle("show");
+}
+
+</script>
 </body>
 </html>
