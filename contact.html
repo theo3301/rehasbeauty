@@ -10,6 +10,8 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 <style>
 
 body{
@@ -46,7 +48,7 @@ color:#d6336c;
 
 .hero{
 height:55vh;
-background:url("https://images.unsplash.com/photo-1515377905703-c4788e51af15");
+background:url("https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9");
 background-size:cover;
 background-position:center;
 display:flex;
@@ -70,56 +72,67 @@ font-family:'Playfair Display';
 font-size:50px;
 }
 
+/* CONTACT CARDS */
+
+.contact-cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+max-width:1100px;
+margin:auto;
+margin-top:-80px;
+padding:20px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:18px;
+text-align:center;
+box-shadow:0 15px 35px rgba(0,0,0,0.15);
+transition:0.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card i{
+font-size:28px;
+color:#d6336c;
+margin-bottom:10px;
+}
+
 /* CONTACT SECTION */
 
 .contact-section{
 max-width:1100px;
 margin:auto;
-padding:80px 20px;
+padding:60px 20px;
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:50px;
-}
-
-/* CONTACT INFO */
-
-.contact-info{
-background:rgba(255,255,255,0.8);
-backdrop-filter:blur(8px);
-padding:40px;
-border-radius:20px;
-box-shadow:0 20px 40px rgba(0,0,0,0.15);
-}
-
-.contact-info h2{
-font-family:'Playfair Display';
-color:#d6336c;
-margin-bottom:20px;
-}
-
-.contact-info p{
-margin:10px 0;
+gap:40px;
 }
 
 /* FORM */
 
 .contact-form{
 background:white;
-padding:40px;
-border-radius:20px;
+padding:35px;
+border-radius:18px;
 box-shadow:0 20px 40px rgba(0,0,0,0.15);
 }
 
 .contact-form h2{
 font-family:'Playfair Display';
 color:#d6336c;
-margin-bottom:20px;
 }
 
-input,textarea{
+input,textarea,select{
 width:100%;
 padding:12px;
-margin:10px 0;
+margin-top:10px;
+margin-bottom:15px;
 border-radius:8px;
 border:1px solid #ccc;
 font-family:'Poppins';
@@ -136,7 +149,20 @@ color:white;
 padding:12px 25px;
 border-radius:30px;
 cursor:pointer;
-margin-top:10px;
+}
+
+/* BUSINESS HOURS */
+
+.hours{
+background:white;
+padding:30px;
+border-radius:18px;
+box-shadow:0 20px 40px rgba(0,0,0,0.15);
+}
+
+.hours h2{
+font-family:'Playfair Display';
+color:#d6336c;
 }
 
 /* MAP */
@@ -148,12 +174,62 @@ border:none;
 margin-top:50px;
 }
 
+/* FAQ */
+
+.faq{
+max-width:900px;
+margin:auto;
+padding:70px 20px;
+}
+
+.faq h2{
+text-align:center;
+font-family:'Playfair Display';
+margin-bottom:30px;
+}
+
+.faq-item{
+background:white;
+margin-bottom:10px;
+border-radius:10px;
+padding:15px;
+cursor:pointer;
+box-shadow:0 10px 20px rgba(0,0,0,0.1);
+}
+
+.faq-answer{
+display:none;
+margin-top:8px;
+}
+
+/* CTA */
+
+.cta{
+background:#f7d9dc;
+text-align:center;
+padding:60px 20px;
+}
+
+.cta h2{
+font-family:'Playfair Display';
+}
+
+.cta a{
+display:inline-block;
+margin-top:15px;
+padding:14px 30px;
+background:#d6336c;
+color:white;
+border-radius:30px;
+text-decoration:none;
+}
+
 /* FOOTER */
 
 footer{
 background:#f7d9dc;
 text-align:center;
-padding:35px;
+padding:30px;
 }
 
 /* WHATSAPP */
@@ -194,8 +270,8 @@ font-size:35px;
 
 <a href="index.html">Home</a>
 <a href="services.html">Services</a>
-<a href="Gallery.html">Gallery</a>
-<a href="Contact.html">Contact</a>
+<a href="gallery.html">Gallery</a>
+<a href="contact.html">Contact</a>
 
 </nav>
 
@@ -205,27 +281,33 @@ font-size:35px;
 
 </section>
 
-<section class="contact-section">
+<!-- CONTACT CARDS -->
 
-<!-- CONTACT INFO -->
+<div class="contact-cards">
 
-<div class="contact-info">
+<div class="card">
+<i class="fa-solid fa-location-dot"></i>
+<h3>Address</h3>
+<p>Bathimpressions Complex<br>Chanapora, Srinagar</p>
+</div>
 
-<h2>Reha Beauty Clinic</h2>
+<div class="card">
+<i class="fa-solid fa-phone"></i>
+<h3>Phone</h3>
+<p>+91 9622212234</p>
+</div>
 
-<p>📍 Bathimpressions Complex, Main Market Chanapora, Srinagar, Kashmir 190015</p>
-
-<p>📞 Mobile: 9622212234</p>
-
-<p>📧 Email: rehasbeautyclinic@gmail.com</p>
-
-<p>🌐 Website: rehasbeautyclinic.com</p>
-
-<p>Feel free to contact us anytime. Our team will respond quickly and help you book your beauty services.</p>
+<div class="card">
+<i class="fa-solid fa-envelope"></i>
+<h3>Email</h3>
+<p>rehasbeautyclinic@gmail.com</p>
+</div>
 
 </div>
 
-<!-- CONTACT FORM -->
+<!-- CONTACT + BOOKING -->
+
+<section class="contact-section">
 
 <div class="contact-form">
 
@@ -247,6 +329,37 @@ font-size:35px;
 
 </div>
 
+<div class="hours">
+
+<h2>Book Appointment</h2>
+
+<form>
+
+<select>
+<option>Select Service</option>
+<option>Bridal Makeup</option>
+<option>Hair Styling</option>
+<option>Facial Treatment</option>
+</select>
+
+<input type="date">
+
+<input type="time">
+
+<input type="text" placeholder="Phone Number">
+
+<button>Book Now</button>
+
+</form>
+
+<h2 style="margin-top:30px;">Opening Hours</h2>
+
+<p>Monday – Saturday: 10:00 AM – 8:00 PM</p>
+
+<p>Sunday: Closed</p>
+
+</div>
+
 </section>
 
 <!-- MAP -->
@@ -254,6 +367,34 @@ font-size:35px;
 <iframe class="map"
 src="https://www.google.com/maps?q=chanapora+srinagar&output=embed">
 </iframe>
+
+<!-- FAQ -->
+
+<section class="faq">
+
+<h2>Frequently Asked Questions</h2>
+
+<div class="faq-item" onclick="toggleFAQ(this)">
+Do I need to book in advance?
+<div class="faq-answer">Yes, we recommend booking especially for bridal services.</div>
+</div>
+
+<div class="faq-item" onclick="toggleFAQ(this)">
+Do you offer consultations?
+<div class="faq-answer">Yes, we provide consultations for bridal and skin treatments.</div>
+</div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="cta">
+
+<h2>Ready for Your Luxury Beauty Experience?</h2>
+
+<a href="https://wa.me/9622212234">Book Appointment</a>
+
+</section>
 
 <footer>
 
@@ -266,6 +407,16 @@ src="https://www.google.com/maps?q=chanapora+srinagar&output=embed">
 </footer>
 
 <a href="https://wa.me/9622212234" class="whatsapp">💬</a>
+
+<script>
+
+function toggleFAQ(element){
+let answer = element.querySelector(".faq-answer");
+
+answer.style.display = answer.style.display === "block" ? "none" : "block";
+}
+
+</script>
 
 </body>
 </html>
