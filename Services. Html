@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Services | Reha Beauty Clinic</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+font-family:'Poppins',sans-serif;
+background:#fff7f9;
+}
+
+.service-card{
+transition:0.4s;
+}
+
+.service-card:hover{
+transform:translateY(-10px);
+box-shadow:0 25px 40px rgba(0,0,0,0.2);
+}
+
+.tab-btn{
+padding:10px 20px;
+border-radius:8px;
+background:#fff;
+border:1px solid #DC747B;
+}
+
+.tab-btn.active{
+background:#F9C6CA;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header class="bg-white shadow">
+
+<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+<h1 class="text-xl font-semibold text-[#DC747B]">
+Reha Beauty Clinic
+</h1>
+
+<nav class="space-x-6">
+
+<a href="index.html" class="hover:text-[#DC747B]">Home</a>
+
+<a href="services.html" class="text-[#DC747B] font-semibold">Services</a>
+
+<a href="gallery.html" class="hover:text-[#DC747B]">Gallery</a>
+
+<a href="contact.html" class="hover:text-[#DC747B]">Contact</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="text-center py-16">
+
+<h1 class="text-4xl font-bold mb-4">
+Our Services
+</h1>
+
+<p class="text-gray-600">
+Luxury beauty & skincare treatments in Srinagar
+</p>
+
+</section>
+
+
+<!-- SERVICE TABS -->
+
+<div class="flex justify-center gap-3 mb-10 flex-wrap">
+
+<button class="tab-btn active" onclick="filterService('all')">All</button>
+
+<button class="tab-btn" onclick="filterService('makeup')">Makeup & Hair</button>
+
+<button class="tab-btn" onclick="filterService('facial')">Facials</button>
+
+<button class="tab-btn" onclick="filterService('aesthetic')">Aesthetic</button>
+
+<button class="tab-btn" onclick="filterService('grooming')">Grooming</button>
+
+<button class="tab-btn" onclick="filterService('bridal')">Bridal</button>
+
+</div>
+
+
+<!-- SERVICES GRID -->
+
+<section class="max-w-7xl mx-auto px-6 pb-20">
+
+<div id="servicesContainer" class="grid md:grid-cols-3 gap-8">
+
+
+<!-- MAKEUP -->
+
+<div class="service-card makeup bg-white rounded-xl p-6 text-center">
+
+<img src="Assets/makeup.jpg" class="rounded-lg mb-4 w-full h-56 object-cover">
+
+<h3 class="text-xl font-semibold text-[#DC747B]">
+Makeup
+</h3>
+
+<p class="mt-3 text-gray-600">
+
+Party Makeup <br>
+Bridal Makeup <br>
+Bridal Hairdo
+
+</p>
+
+</div>
+
+
+<!-- HAIR -->
+
+<div class="service-card makeup bg-white rounded-xl p-6 text-center">
+
+<img src="Assets/Hairstyle.jpg" class="rounded-lg mb-4 w-full h-56 object-cover">
+
+<h3 class="text-xl font-semibold text-[#DC747B]">
+Hair
+</h3>
+
+<p class="mt-3 text-gray-600">
+
+Hair Treatments <br>
+Hair Colouring <br>
+Hair Styling <br>
+Hair Cuts
+
+</p>
+
+</div>
+
+
+<!-- FACIAL -->
+
+<div class="service-card facial bg-white rounded-xl p-6 text-center">
+
+<img src="Assets/Facials.jpg" class="rounded-lg mb-4 w-full h-56 object-cover">
+
+<h3 class="text-xl font-semibold text-[#DC747B]">
+Facials
+</h3>
+
+<p class="mt-3 text-gray-600">
+
+Vampire Facial <br>
+Hydra Facial <br>
+Oxyjet Facial <br>
+LED Facial
+
+</p>
+
+</div>
+
+
+<!-- TREATMENT -->
+
+<div class="service-card facial bg-white rounded-xl p-6 text-center">
+
+<img src="Assets/Treatments.jpg" class="rounded-lg mb-4 w-full h-56 object-cover">
+
+<h3 class="text-xl font-semibold text-[#DC747B]">
+Skin Treatments
+</h3>
+
+<p class="mt-3 text-gray-600">
+
+Chemical Peel <br>
+Carbon Laser <br>
+Laser Hair Removal
+
+</p>
+
+</div>
+
+
+<!-- AESTHETIC -->
+
+<div class="service-card aesthetic bg-white rounded-xl p-6 text-center">
+
+<img src="Assets/Aesthetic.jpg" class="rounded-lg mb-4 w-full h-56 object-cover">
+
+<h3 class="text-xl font-semibold text-[#DC747B]">
+Aesthetic
+</h3>
+
+<p class="mt-3 text-gray-600">
+
+Botox <br>
+Fillers
+
+</p>
+
+</div>
+
+
+<!-- GROOMING -->
+
+<div class="service-card grooming bg-white rounded-xl p-6 text-center">
+
+<img src="Assets/Grooming.jpg" class="rounded-lg mb-4 w-full h-56 object-cover">
+
+<h3 class="text-xl font-semibold text-[#DC747B]">
+Grooming
+</h3>
+
+<p class="mt-3 text-gray-600">
+
+Eyebrow Tinting <br>
+Body Polishing <br>
+Nail Art <br>
+Manicure & Pedicure
+
+</p>
+
+</div>
+
+
+<!-- BRIDAL -->
+
+<div class="service-card bridal bg-white rounded-xl p-6 text-center">
+
+<img src="Assets/Bridal.jpg" class="rounded-lg mb-4 w-full h-56 object-cover">
+
+<h3 class="text-xl font-semibold text-[#DC747B]">
+Bridal Services
+</h3>
+
+<p class="mt-3 text-gray-600">
+
+Bridal Lehnga <br>
+Bridal Jewellery <br>
+Clutches
+
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- WHATSAPP BUTTON -->
+
+<a href="https://wa.me/917051610035"
+class="fixed bottom-6 right-6 bg-green-500 text-white px-5 py-3 rounded-full shadow-lg">
+
+Book Appointment
+
+</a>
+
+
+<!-- FOOTER -->
+
+<footer class="bg-[#f7d9dc] py-8 text-center">
+
+<h3 class="text-lg font-semibold">
+Reha Beauty Clinic
+</h3>
+
+<p class="text-gray-600 mt-2">
+Luxury Bridal Makeup & Beauty Studio
+</p>
+
+<p class="text-sm mt-4 text-gray-500">
+© 2026 Reha Beauty Clinic
+</p>
+
+</footer>
+
+
+<script>
+
+function filterService(category){
+
+let cards=document.querySelectorAll(".service-card");
+
+cards.forEach(card=>{
+
+if(category==="all"){
+card.style.display="block";
+}
+
+else if(card.classList.contains(category)){
+card.style.display="block";
+}
+
+else{
+card.style.display="none";
+}
+
+});
+
+}
+
+</script>
+
+
+</body>
+</html>
