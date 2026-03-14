@@ -8,38 +8,189 @@
 
 <title>Services | Reha Beauty Clinic</title>
 
-<script src="https://cdn.tailwindcss.com"></script>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
 <style>
 
 body{
+margin:0;
 font-family:'Poppins',sans-serif;
 background:#fff7f9;
+color:#333;
 }
 
-.service-card{
+/* NAV */
+
+nav{
+background:white;
+padding:12px;
+text-align:center;
+box-shadow:0 3px 10px rgba(0,0,0,0.05);
+}
+
+nav a{
+margin:0 15px;
+text-decoration:none;
+color:#444;
+font-weight:500;
+}
+
+nav a:hover{
+color:#d6336c;
+}
+
+/* HERO */
+
+.hero{
+height:55vh;
+background:url("https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9");
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.45);
+}
+
+.hero h1{
+position:relative;
+color:white;
+font-size:50px;
+font-family:'Playfair Display';
+}
+
+/* TABS */
+
+.tabs{
+text-align:center;
+margin:60px 0 30px;
+}
+
+.tabs button{
+padding:12px 20px;
+margin:6px;
+border:none;
+background:white;
+border-radius:30px;
+cursor:pointer;
+font-weight:600;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.tabs button:hover{
+background:#d6336c;
+color:white;
+}
+
+/* SERVICES GRID */
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:35px;
+max-width:1100px;
+margin:auto;
+padding:40px 20px 80px;
+}
+
+/* CARD */
+
+.card{
+position:relative;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 15px 35px rgba(0,0,0,0.15);
 transition:0.4s;
+background:white;
 }
 
-.service-card:hover{
-transform:translateY(-10px);
-box-shadow:0 25px 40px rgba(0,0,0,0.2);
+.card img{
+width:100%;
+height:250px;
+object-fit:cover;
+transition:0.6s;
 }
 
-.tab-btn{
-padding:10px 20px;
-border-radius:8px;
-background:#fff;
-border:1px solid #DC747B;
+.card:hover img{
+transform:scale(1.1);
 }
 
-.tab-btn.active{
-background:#F9C6CA;
+.card:hover{
+transform:translateY(-12px);
+box-shadow:0 25px 60px rgba(0,0,0,0.25);
+}
+
+/* CARD CONTENT */
+
+.card-content{
+padding:18px;
+}
+
+.card h3{
+color:#d6336c;
+margin-bottom:10px;
+font-family:'Playfair Display';
+}
+
+.card ul{
+padding-left:16px;
+text-align:left;
+line-height:1.8;
+}
+
+/* BOOK BUTTON */
+
+.book-btn{
+display:inline-block;
+margin-top:10px;
+padding:10px 18px;
+background:#d6336c;
+color:white;
+border-radius:30px;
+text-decoration:none;
+font-size:14px;
+}
+
+/* FOOTER */
+
+footer{
+background:#f7d9dc;
+text-align:center;
+padding:30px;
+margin-top:50px;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:16px;
+border-radius:50%;
+font-size:24px;
+text-decoration:none;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:32px;
+}
+
 }
 
 </style>
@@ -48,283 +199,173 @@ background:#F9C6CA;
 
 <body>
 
-<!-- NAVBAR -->
-
-<header class="bg-white shadow">
-
-<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-
-<h1 class="text-xl font-semibold text-[#DC747B]">
-Reha Beauty Clinic
-</h1>
-
-<nav class="space-x-6">
-
-<a href="index.html" class="hover:text-[#DC747B]">Home</a>
-
-<a href="services.html" class="text-[#DC747B] font-semibold">Services</a>
-
-<a href="gallery.html" class="hover:text-[#DC747B]">Gallery</a>
-
-<a href="contact.html" class="hover:text-[#DC747B]">Contact</a>
-
+<nav>
+<a href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a href="Gallery.html">Gallery</a>
+<a href="Contact.html">Contact</a>
 </nav>
-
-</div>
-
-</header>
-
 
 <!-- HERO -->
 
-<section class="text-center py-16">
+<section class="hero">
 
-<h1 class="text-4xl font-bold mb-4">
-Our Services
-</h1>
-
-<p class="text-gray-600">
-Luxury beauty & skincare treatments in Srinagar
-</p>
+<h1>Our Services</h1>
 
 </section>
 
+<!-- SERVICES -->
 
-<!-- SERVICE TABS -->
-
-<div class="flex justify-center gap-3 mb-10 flex-wrap">
-
-<button class="tab-btn active" onclick="filterService('all')">All</button>
-
-<button class="tab-btn" onclick="filterService('makeup')">Makeup & Hair</button>
-
-<button class="tab-btn" onclick="filterService('facial')">Facials</button>
-
-<button class="tab-btn" onclick="filterService('aesthetic')">Aesthetic</button>
-
-<button class="tab-btn" onclick="filterService('grooming')">Grooming</button>
-
-<button class="tab-btn" onclick="filterService('bridal')">Bridal</button>
-
-</div>
-
-
-<!-- SERVICES GRID -->
-
-<section class="max-w-7xl mx-auto px-6 pb-20">
-
-<div id="servicesContainer" class="grid md:grid-cols-3 gap-8">
-
+<section class="services">
 
 <!-- MAKEUP -->
 
-<div class="service-card makeup bg-white rounded-xl p-6 text-center">
+<div class="card">
 
-<img src="Assets/makeup.jpg" class="rounded-lg mb-4 w-full h-56 object-cover">
+<img src="Assets/makeup.jpg">
 
-<h3 class="text-xl font-semibold text-[#DC747B]">
-Makeup
-</h3>
+<div class="card-content">
 
-<p class="mt-3 text-gray-600">
+<h3>Makeup</h3>
 
-Party Makeup <br>
-Bridal Makeup <br>
-Bridal Hairdo
+<ul>
+<li>Party Makeup</li>
+<li>Bridal Makeup</li>
+<li>Bridal Hairdo</li>
+</ul>
 
-</p>
+<a href="https://wa.me/917051610035" class="book-btn">Book Appointment</a>
 
 </div>
 
+</div>
 
 <!-- HAIR -->
 
-<div class="service-card makeup bg-white rounded-xl p-6 text-center">
+<div class="card">
 
-<img src="Assets/Hairstyle.jpg" class="rounded-lg mb-4 w-full h-56 object-cover">
+<img src="Assets/Hairstyle.jpg">
 
-<h3 class="text-xl font-semibold text-[#DC747B]">
-Hair
-</h3>
+<div class="card-content">
 
-<p class="mt-3 text-gray-600">
+<h3>Hair</h3>
 
-Hair Treatments <br>
-Hair Colouring <br>
-Hair Styling <br>
-Hair Cuts
+<ul>
+<li>Hair Treatments</li>
+<li>Hair Colouring</li>
+<li>Hair Styling</li>
+<li>Hair Cuts</li>
+</ul>
 
-</p>
+<a href="https://wa.me/917051610035" class="book-btn">Book Appointment</a>
 
 </div>
 
+</div>
 
 <!-- FACIAL -->
 
-<div class="service-card facial bg-white rounded-xl p-6 text-center">
+<div class="card">
 
-<img src="Assets/Facials.jpg" class="rounded-lg mb-4 w-full h-56 object-cover">
+<img src="Assets/Facials.jpg">
 
-<h3 class="text-xl font-semibold text-[#DC747B]">
-Facials
-</h3>
+<div class="card-content">
 
-<p class="mt-3 text-gray-600">
+<h3>Facials</h3>
 
-Vampire Facial <br>
-Hydra Facial <br>
-Oxyjet Facial <br>
-LED Facial
+<ul>
+<li>Vampire Facial</li>
+<li>Hydra Facial</li>
+<li>Oxyjet Facial</li>
+<li>LED Facial</li>
+</ul>
 
-</p>
-
-</div>
-
-
-<!-- TREATMENT -->
-
-<div class="service-card facial bg-white rounded-xl p-6 text-center">
-
-<img src="Assets/Treatments.jpg" class="rounded-lg mb-4 w-full h-56 object-cover">
-
-<h3 class="text-xl font-semibold text-[#DC747B]">
-Skin Treatments
-</h3>
-
-<p class="mt-3 text-gray-600">
-
-Chemical Peel <br>
-Carbon Laser <br>
-Laser Hair Removal
-
-</p>
+<a href="https://wa.me/917051610035" class="book-btn">Book Appointment</a>
 
 </div>
 
+</div>
+
+<!-- TREATMENTS -->
+
+<div class="card">
+
+<img src="Assets/Treatments.jpg">
+
+<div class="card-content">
+
+<h3>Skin Treatments</h3>
+
+<ul>
+<li>Chemical Peel</li>
+<li>Carbon Laser</li>
+<li>Laser Hair Removal</li>
+</ul>
+
+<a href="https://wa.me/917051610035" class="book-btn">Book Appointment</a>
+
+</div>
+
+</div>
 
 <!-- AESTHETIC -->
 
-<div class="service-card aesthetic bg-white rounded-xl p-6 text-center">
+<div class="card">
 
-<img src="Assets/Aesthetic.jpg" class="rounded-lg mb-4 w-full h-56 object-cover">
+<img src="Assets/Aesthetic.jpg">
 
-<h3 class="text-xl font-semibold text-[#DC747B]">
-Aesthetic
-</h3>
+<div class="card-content">
 
-<p class="mt-3 text-gray-600">
+<h3>Aesthetic</h3>
 
-Botox <br>
-Fillers
+<ul>
+<li>Botox</li>
+<li>Fillers</li>
+</ul>
 
-</p>
+<a href="https://wa.me/917051610035" class="book-btn">Book Appointment</a>
 
 </div>
 
+</div>
 
 <!-- GROOMING -->
 
-<div class="service-card grooming bg-white rounded-xl p-6 text-center">
+<div class="card">
 
-<img src="Assets/Grooming.jpg" class="rounded-lg mb-4 w-full h-56 object-cover">
+<img src="Assets/Grooming.jpg">
 
-<h3 class="text-xl font-semibold text-[#DC747B]">
-Grooming
-</h3>
+<div class="card-content">
 
-<p class="mt-3 text-gray-600">
+<h3>Grooming</h3>
 
-Eyebrow Tinting <br>
-Body Polishing <br>
-Nail Art <br>
-Manicure & Pedicure
+<ul>
+<li>Eyebrow Tinting</li>
+<li>Body Polishing</li>
+<li>Nail Art</li>
+<li>Manicure</li>
+<li>Pedicure</li>
+</ul>
 
-</p>
-
-</div>
-
-
-<!-- BRIDAL -->
-
-<div class="service-card bridal bg-white rounded-xl p-6 text-center">
-
-<img src="Assets/Bridal.jpg" class="rounded-lg mb-4 w-full h-56 object-cover">
-
-<h3 class="text-xl font-semibold text-[#DC747B]">
-Bridal Services
-</h3>
-
-<p class="mt-3 text-gray-600">
-
-Bridal Lehnga <br>
-Bridal Jewellery <br>
-Clutches
-
-</p>
+<a href="https://wa.me/917051610035" class="book-btn">Book Appointment</a>
 
 </div>
-
 
 </div>
 
 </section>
 
+<footer>
 
-<!-- WHATSAPP BUTTON -->
+<h3>Reha Beauty Clinic</h3>
 
-<a href="https://wa.me/917051610035"
-class="fixed bottom-6 right-6 bg-green-500 text-white px-5 py-3 rounded-full shadow-lg">
+<p>Luxury Bridal Makeup & Beauty Studio</p>
 
-Book Appointment
-
-</a>
-
-
-<!-- FOOTER -->
-
-<footer class="bg-[#f7d9dc] py-8 text-center">
-
-<h3 class="text-lg font-semibold">
-Reha Beauty Clinic
-</h3>
-
-<p class="text-gray-600 mt-2">
-Luxury Bridal Makeup & Beauty Studio
-</p>
-
-<p class="text-sm mt-4 text-gray-500">
-© 2026 Reha Beauty Clinic
-</p>
+<p>© 2026 Reha Beauty Clinic</p>
 
 </footer>
 
-
-<script>
-
-function filterService(category){
-
-let cards=document.querySelectorAll(".service-card");
-
-cards.forEach(card=>{
-
-if(category==="all"){
-card.style.display="block";
-}
-
-else if(card.classList.contains(category)){
-card.style.display="block";
-}
-
-else{
-card.style.display="none";
-}
-
-});
-
-}
-
-</script>
-
+<a href="https://wa.me/917051610035" class="whatsapp">💬</a>
 
 </body>
 </html>
