@@ -5,11 +5,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Services | Reha Beauty Clinic</title>
+<title>Luxury Services | Reha Beauty Clinic</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 <style>
 
@@ -18,39 +16,36 @@ margin:0;
 font-family:'Poppins',sans-serif;
 background:#fff7f9;
 color:#333;
+overflow-x:hidden;
 }
 
-/* NAVBAR */
+/* NAV */
 
 nav{
+position:sticky;
+top:0;
 background:white;
 padding:15px;
 text-align:center;
-box-shadow:0 3px 12px rgba(0,0,0,0.08);
-position:sticky;
-top:0;
+box-shadow:0 4px 20px rgba(0,0,0,0.08);
 z-index:999;
 }
 
 nav a{
-margin:0 18px;
+margin:0 20px;
 text-decoration:none;
 color:#333;
 font-weight:500;
-position:relative;
 }
 
-nav a:hover{
-color:#d6336c;
-}
-
-/* HERO */
+/* HERO PARALLAX */
 
 .hero{
-height:60vh;
-background:url("https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9");
+height:80vh;
+background-image:url("https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9");
 background-size:cover;
 background-position:center;
+background-attachment:fixed;
 display:flex;
 align-items:center;
 justify-content:center;
@@ -62,60 +57,37 @@ content:"";
 position:absolute;
 width:100%;
 height:100%;
-background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.5));
+background:rgba(0,0,0,0.45);
 }
 
 .hero h1{
 position:relative;
 color:white;
+font-size:60px;
 font-family:'Playfair Display';
-font-size:55px;
-}
-
-/* FILTER */
-
-.filters{
-text-align:center;
-margin:60px 0 40px;
-}
-
-.filters button{
-padding:12px 20px;
-border:none;
-border-radius:30px;
-margin:6px;
-background:white;
-box-shadow:0 5px 18px rgba(0,0,0,0.12);
-cursor:pointer;
-font-weight:600;
-transition:0.3s;
-}
-
-.filters button:hover{
-background:#d6336c;
-color:white;
 }
 
 /* SERVICES GRID */
 
 .services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:35px;
 max-width:1200px;
 margin:auto;
-padding:20px;
+padding:80px 20px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:40px;
 }
 
-/* SERVICE CARD */
+/* GLASS CARD */
 
 .card{
-border-radius:18px;
+background:rgba(255,255,255,0.7);
+backdrop-filter:blur(10px);
+border-radius:20px;
 overflow:hidden;
-background:rgba(255,255,255,0.8);
-backdrop-filter:blur(8px);
 box-shadow:0 20px 40px rgba(0,0,0,0.15);
 transition:0.4s;
+position:relative;
 }
 
 .card:hover{
@@ -124,13 +96,8 @@ transform:translateY(-12px);
 
 .card img{
 width:100%;
-height:250px;
+height:260px;
 object-fit:cover;
-transition:0.6s;
-}
-
-.card:hover img{
-transform:scale(1.1);
 }
 
 .card-content{
@@ -140,67 +107,98 @@ padding:20px;
 .card h3{
 color:#d6336c;
 font-family:'Playfair Display';
-margin-bottom:10px;
 }
 
-/* BUTTON */
-
-.book-btn{
-display:inline-block;
-margin-top:10px;
-padding:10px 20px;
-border-radius:30px;
-background:linear-gradient(45deg,#d6336c,#ff8fab);
-color:white;
-text-decoration:none;
+.card p{
 font-size:14px;
+}
+
+/* HOVER REVEAL */
+
+.card-overlay{
+position:absolute;
+bottom:0;
+width:100%;
+background:rgba(0,0,0,0.6);
+color:white;
+padding:20px;
+opacity:0;
+transition:0.4s;
+}
+
+.card:hover .card-overlay{
+opacity:1;
 }
 
 /* BRIDAL PACKAGES */
 
-.pricing{
-padding:90px 20px;
+.packages{
 background:white;
+padding:100px 20px;
 text-align:center;
 }
 
-.pricing h2{
+.packages h2{
 font-family:'Playfair Display';
 font-size:42px;
-margin-bottom:40px;
+margin-bottom:60px;
 }
 
-.pricing-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:30px;
+/* PACKAGE GRID */
+
+.package-grid{
 max-width:1100px;
 margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:35px;
 }
 
-.price-card{
-background:white;
+/* PACKAGE CARD */
+
+.package{
 border-radius:20px;
-padding:35px;
-box-shadow:0 20px 45px rgba(0,0,0,0.18);
+padding:40px;
+box-shadow:0 20px 40px rgba(0,0,0,0.18);
+background:white;
 transition:0.4s;
 }
 
-.price-card:hover{
+.package:hover{
 transform:translateY(-10px);
 }
 
+/* FEATURED PACKAGE */
+
+.featured{
+background:linear-gradient(135deg,#d6336c,#ff8fab);
+color:white;
+transform:scale(1.05);
+}
+
 .price{
-font-size:38px;
-color:#d6336c;
+font-size:42px;
 margin:15px 0;
+font-weight:600;
+}
+
+/* BUTTON */
+
+.btn{
+display:inline-block;
+margin-top:15px;
+padding:12px 25px;
+border-radius:40px;
+background:#d6336c;
+color:white;
+text-decoration:none;
 }
 
 /* CTA */
 
 .cta{
-text-align:center;
 padding:80px 20px;
+text-align:center;
 background:#f7d9dc;
 }
 
@@ -209,22 +207,12 @@ font-family:'Playfair Display';
 font-size:38px;
 }
 
-.cta a{
-display:inline-block;
-margin-top:20px;
-padding:14px 30px;
-border-radius:40px;
-background:#d6336c;
-color:white;
-text-decoration:none;
-}
-
 /* FOOTER */
 
 footer{
 background:#f7d9dc;
 text-align:center;
-padding:35px;
+padding:40px;
 }
 
 /* WHATSAPP */
@@ -256,84 +244,109 @@ text-decoration:none;
 
 </nav>
 
+<!-- HERO -->
+
 <section class="hero">
 
-<h1 data-aos="fade-up">Luxury Beauty Services</h1>
+<h1>Luxury Beauty Services</h1>
 
 </section>
-
-<!-- FILTER -->
-
-<div class="filters">
-
-<button onclick="filterServices('all')">All</button>
-<button onclick="filterServices('makeup')">Makeup</button>
-<button onclick="filterServices('skin')">Skin</button>
-<button onclick="filterServices('hair')">Hair</button>
-<button onclick="filterServices('bridal')">Bridal</button>
-
-</div>
 
 <!-- SERVICES -->
 
 <section class="services">
 
-<div class="card makeup" data-aos="fade-up">
+<div class="card">
+
 <img src="https://images.unsplash.com/photo-1487412912498-0447578fcca8">
+
 <div class="card-content">
+
 <h3>Party Makeup</h3>
-<p>Professional event makeup for weddings & parties.</p>
-<a href="https://wa.me/917051610035" class="book-btn">Book Now</a>
-</div>
+
+<p>Professional makeup for events and celebrations.</p>
+
 </div>
 
-<div class="card bridal" data-aos="fade-up">
-<img src="https://images.unsplash.com/photo-1601568870191-33a7a05a4d0c">
-<div class="card-content">
-<h3>Bridal Makeup</h3>
-<p>Luxury bridal makeover & HD makeup.</p>
-<a href="https://wa.me/917051610035" class="book-btn">Book Now</a>
-</div>
+<div class="card-overlay">
+
+Book this service today.
+
 </div>
 
-<div class="card hair" data-aos="fade-up">
+</div>
+
+<div class="card">
+
 <img src="https://images.unsplash.com/photo-1522338242992-e1a54906a8da">
+
 <div class="card-content">
+
 <h3>Hair Styling</h3>
-<p>Hair coloring, treatments and styling.</p>
-<a href="https://wa.me/917051610035" class="book-btn">Book Now</a>
-</div>
+
+<p>Luxury hair styling and coloring.</p>
+
 </div>
 
-<div class="card skin" data-aos="fade-up">
+<div class="card-overlay">
+
+Luxury hair care experience.
+
+</div>
+
+</div>
+
+<div class="card">
+
 <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15">
+
 <div class="card-content">
+
 <h3>Facials</h3>
+
 <p>Hydra facial, LED facial and rejuvenation treatments.</p>
-<a href="https://wa.me/917051610035" class="book-btn">Book Now</a>
-</div>
+
 </div>
 
-<div class="card skin" data-aos="fade-up">
-<img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908">
-<div class="card-content">
-<h3>Skin Treatments</h3>
-<p>Chemical peel, laser treatments and skincare.</p>
-<a href="https://wa.me/917051610035" class="book-btn">Book Now</a>
+<div class="card-overlay">
+
+Advanced skin rejuvenation.
+
 </div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908">
+
+<div class="card-content">
+
+<h3>Skin Treatments</h3>
+
+<p>Chemical peel, laser and pigmentation treatments.</p>
+
+</div>
+
+<div class="card-overlay">
+
+Advanced dermatology treatments.
+
+</div>
+
 </div>
 
 </section>
 
 <!-- BRIDAL PACKAGES -->
 
-<section class="pricing">
+<section class="packages">
 
-<h2 data-aos="fade-up">Bridal Packages</h2>
+<h2>Bridal Packages</h2>
 
-<div class="pricing-grid">
+<div class="package-grid">
 
-<div class="price-card" data-aos="fade-up">
+<div class="package">
 
 <h3>Silver Bridal</h3>
 
@@ -341,13 +354,13 @@ text-decoration:none;
 
 <p>Bridal Makeup</p>
 <p>Hair Styling</p>
-<p>Basic Skin Prep</p>
+<p>Skin Prep</p>
 
-<a href="https://wa.me/917051610035" class="book-btn">Book Package</a>
+<a href="#" class="btn">Book Package</a>
 
 </div>
 
-<div class="price-card" data-aos="fade-up">
+<div class="package featured">
 
 <h3>Gold Bridal</h3>
 
@@ -357,11 +370,11 @@ text-decoration:none;
 <p>Luxury Hair Styling</p>
 <p>Premium Products</p>
 
-<a href="https://wa.me/917051610035" class="book-btn">Book Package</a>
+<a href="#" class="btn">Book Package</a>
 
 </div>
 
-<div class="price-card" data-aos="fade-up">
+<div class="package">
 
 <h3>Platinum Bridal</h3>
 
@@ -369,9 +382,9 @@ text-decoration:none;
 
 <p>Luxury Bridal Look</p>
 <p>Hair Styling</p>
-<p>Skin Treatment</p>
+<p>Skin Treatments</p>
 
-<a href="https://wa.me/917051610035" class="book-btn">Book Package</a>
+<a href="#" class="btn">Book Package</a>
 
 </div>
 
@@ -385,7 +398,7 @@ text-decoration:none;
 
 <h2>Book Your Luxury Beauty Experience</h2>
 
-<a href="https://wa.me/917051610035">Book Appointment</a>
+<a href="https://wa.me/917051610035" class="btn">Book Appointment</a>
 
 </section>
 
@@ -400,36 +413,6 @@ text-decoration:none;
 </footer>
 
 <a href="https://wa.me/917051610035" class="whatsapp">💬</a>
-
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-<script>
-
-AOS.init();
-
-function filterServices(category){
-
-let cards=document.querySelectorAll(".card");
-
-cards.forEach(card=>{
-
-if(category==="all"){
-card.style.display="block";
-}
-
-else if(card.classList.contains(category)){
-card.style.display="block";
-}
-
-else{
-card.style.display="none";
-}
-
-});
-
-}
-
-</script>
 
 </body>
 </html>
